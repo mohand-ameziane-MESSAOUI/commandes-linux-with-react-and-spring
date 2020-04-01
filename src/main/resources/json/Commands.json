@@ -1,0 +1,317 @@
+ [
+    { 
+        "cmd" : "gcc" ,
+        "opt" : [ 
+          {
+            "name" : "-c",
+            "type" : "BINAIRE",
+            "description" : "Compile or assemble the source files, but do not link.  The linking stage simply is not done. The ultimate output is in the form of an object file for each source file."
+          },
+          {
+            "name" : "-S",
+            "type" : "BINAIRE",
+            "description" : "Stop after the stage of compilation proper; do not assemble.  The output is in the form of an assembler code file for each non-assembler input file specified."
+          },
+          {
+            "name" : "-E",
+            "type" : "BINAIRE",
+            "description" : "Stop after the preprocessing stage; do not run the compiler proper.The output is in the form of preprocessed source code, which is sent to the standard output."
+          },      
+          {
+            "name" :  "-o",
+            "type" : "STRING",
+            "description" : "Write output to file.  This is the same as specifying file as the second non-option argument to cpp.  gcc has a different interpretation of a second non-option argument, so you must use -o to specify the output file."
+          },
+          {
+            "name" : "-v",  
+            "type" : "BINAIRE",
+            "description" : "Print (on standard error output) the commands executed to run the stages of compilation.  Also print the version number of the compiler driver program and of the preprocessor and the compiler proper."
+          },
+          {
+            "name" : "--help", 
+            "type" : "BINAIRE",
+            "description" : "Print (on the standard output) a description of the command line options understood by gcc.  If the -v option is also specified then --help will also be passed on to the various processes invoked by gcc, so that they can display the command line options they accept. If the -Wextra option is also specified then command line options which have no documentation associated with them will also be displayed."
+          },
+          {                      
+            "name" : "--version",
+            "type" : "BINAIRE",
+            "description" : "Display the version number and copyrights of the invoked GCC."
+          },
+          {
+            "name" : "@file",
+            "type" : "BINAIRE",
+            "description" : "Read command-line options from file.  The options read are inserted in place of the original @file option.  If file does not exist, or cannot be read, then the option will be treated literally, and not removed."
+          },
+          {
+            "name" : "-ansi",
+            "type" : "BINAIRE",
+            "description" : "In C mode, support all ISO C90 programs.  In C++ mode, remove GNU extensions that conflict with ISO C++."
+          },
+          {
+            "name" : "-w",
+            "type" : "BINAIRE",
+            "description" : "Suppress all warnings, including those which GNU CPP issues by default."
+          },
+          {
+            "name" : "-g",
+            "type" : "BINAIRE",
+            "description" : "Produce debugging information in the operating system's native format (stabs, COFF, XCOFF, or DWARF 2). GDB can work with this debugging information."
+          },
+          {
+            "name" : "-ggdb",
+            "type" : "BINAIRE",
+            "description" : "Produce debugging information for use by GDB.  This means to use the most expressive format available 
+                            (DWARF 2, stabs, or the native format if neither of those are supported), including GDB extensions if at all possible."
+          },
+          {
+            "name" : "-p",
+            "type" : "BINAIRE",
+            "description" : "Generate extra code to write profile information suitable for the analysis program prof.  You must use this 
+                            option when compiling the source files you want data about, and you must also use it when linking."
+          },
+          {
+            "name" : "-pg",
+            "type" : "BINAIRE",
+            "description" : "Generate extra code to write profile information suitable for the analysis program gprof.  You must use this 
+                            option when compiling the source files you want data about, and you must also use it when linking."
+          },
+          {
+            "name" : "-Q",
+            "type" : "BINAIRE",
+            "description" : "Makes the compiler print out each function name as it is compiled, and print some statistics about each pass when 
+                            it finishes."
+          },      
+          {
+            "name" : "-time",
+            "type" : "BINAIRE",
+            "description" : "Report the CPU time taken by each subprocess in the compilation sequence.  For C source files, this is the 
+                             compiler proper and assembler (plus the linker if linking is done).  The output looks like this:
+                             # cc1 0.12 0.01
+                             # as 0.00 0.01"
+          },
+          {
+            "name" : "-fsee",
+            "type" : "BINAIRE",
+            "description" : "Eliminates redundant extension instructions and move the non redundant ones to optimal placement using LCM."
+          }, 
+          {
+            "name" : "-D",
+            "type" : "STRING",
+            "description" : "Predefine name as a macro, with definition 1."
+          },
+          {
+            "name" : "-U",
+            "type" : "STRING",
+            "description" : "Cancel any previous definition of name, either built in or provided with a -D option."
+          },
+          {
+            "name" : "-undef",
+            "type" : "BINAIRE",
+            "description" : "Do not predefine any system-specific or GCC-specific macros. The standard predefined macros remain defined."
+          },
+          {
+            "name" : "-I",
+            "type" : "STRING",
+            "description" : "Add the directory dir to the list of directories to be searched for header files.  Directories named by -I are 
+                            searched before the standard system include directories.  If the directory dir is a standard system include directory,
+                            the option is ignored to ensure that the default search order for system directories and the special treatment of 
+                            system headers are not defeated ."
+          },
+          {
+            "name" : "-L",
+            "type" : "STRING",
+            "description" : "Add directory dir to the list of directories to be searched for -l."
+          },
+          {
+            "name" : "-F",
+            "type" : "STRING",
+            "description" : "Add the framework directory dir to the head of the list of directories to be searched for header files.  These 
+                            directories are interleaved with those specified by -I options and are scanned in a left-to-right order."
+          },
+          {
+            "name" : "-include",
+            "type" : "FILE",
+            "description" : "Process file as if #include file appeared as the first line of the primary source file. However, 
+            the first directory searched for file is the preprocessor’s working directory instead of the directory containing 
+            the main source file. If not found there, it is searched for in the remainder of the #include  search chain as normal."
+          },      
+          {
+            "name" : "-C",
+            "type" : "BINAIRE",
+            "description" : "Do not discard comments. All comments are passed through to the output file, except for comments in processed 
+            directives, which are deleted along with the directive."
+          }, 
+          {
+            "name" : "-P",
+            "type" : "BINAIRE",
+            "description" : "Inhibit generation of linemarkers in the output from the preprocessor. This might be useful when running 
+            the preprocessor on something that is not C code, and will be sent to a program which might be confused by the linemarkers."
+          },
+          {
+            "name" : "-H",
+            "type" : "BINAIRE",
+            "description" : "Print the name of each header file used, in addition to other normal activities. Each name is indented to 
+            show how deep in the ‘#include’ stack it is. Precompiled header files are also printed, even if they are found to be invalid; 
+            an invalid precompiled header file is printed with ‘...x’ and a valid one with ‘...!’ ."
+          },
+          {
+            "name" : "-r",
+            "type" : "BINAIRE",
+            "description" : "Produce a relocatable object as output. This is also known as partial linking."
+          },
+          {
+            "name" : "-s",
+            "type" : "BINAIRE",
+            "description" : "Remove all symbol table and relocation information from the executable."
+          },
+          {
+            "name" : "-x",
+            "type" : "STRING",
+            "description" : "Specify explicitly the language fir the following inputs files. This option applies to all following input files 
+                            until the next -x option."
+          }
+         ]   
+    },   
+    { 
+        "cmd" : "dot", 
+        "opt" : [ 
+        { 
+          "name" : "-G",
+          "type" : "STRING",
+          "description" : "Set a graph attribute, with default value = true."
+        },
+        { 
+          "name" : "-N",
+          "type" : "STRING",
+          "description" : "Set a default node attribute, with default value = true."
+        },
+        { 
+          "name" : "-E",
+          "type" : "STRING",
+          "description" : "Set a default edge attribute, with default value = true."
+        },
+        { 
+          "name" : "-K",
+          "type" : "STRING",
+          "description" : "Specifies which default layout algorithm to use, overriding the default from the command name. For example, running dot -Kneato is equivalent to running neato."
+        },
+        { 
+          "name" : "-L",
+          "type" : "STRING",
+          "description" : "User-supplied, device-dependent library text. Multiple flags may be given. These strings are passed to the code generator at the beginning of output."
+        },
+        { 
+          "name" : "-V",
+          "type" : "BINAIRE",
+          "description" : "Emit version information and exit."
+        },
+        { 
+          "name" : "-o",
+          "type" : "FILE",
+          "description" : "Write output to file outfile. By default, output goes to stdout."
+        },
+        { 
+          "name" : "-O",
+          "type" : "BINAIRE",
+          "description" : "Automatically generate output file names based on the input file name and the various output formats specified by the -T flags."
+        },
+        { 
+          "name" : "-P",
+          "type" : "BINAIRE",
+          "description" : "Automatically generate a graph that shows the plugin configuration of the current executable. e.g. dot -P -Tps | lpr"
+        },
+        { 
+          "name" : "-q",
+          "type" : "BINAIRE",
+          "description" : "Suppress warning messages"
+        },
+        { 
+          "name" : "-v",
+          "type" : "BINAIRE",
+          "description" : "Verbose mode"
+        },
+        { 
+          "name" : "-x",
+          "type" : "BINAIRE",
+          "description" : "In neato, on input, prune isolated nodes and peninsulas. This removes uninteresting graph structure and produces a less cluttered drawing."
+        },
+        { 
+          "name" : "-y",
+          "type" : "BINAIRE",
+          "description" : "By default, the coordinate system used in generic output formats, such as attributed dot, extended dot, plain and plain-ext, is the standard cartesian system with the origin in the lower left corner, and with increasing y coordinates as points move from bottom to top. If the -y flag is used, the coordinate system is inverted, so that increasing values of y correspond to movement from top to bottom."
+        },
+        { 
+          "name" : "-?",
+          "type" : "BINAIRE",
+          "description" : "Print usage information, then exit."
+        },
+        { 
+          "name" : "-Tpdf",
+          "type" : "STRING",
+          "description" : "Set output language to one of the PDF format"
+        },
+        { 
+          "name" : "-Tgif",
+          "type" : "STRING",
+          "description" : "Set output language to one of the GIF format"
+        },
+        { 
+          "name" : "-Tpng",
+          "type" : "STRING",
+          "description" : "Set output language to one of the PNG format"
+        },
+        { 
+          "name" : "-Tplain",
+          "type" : "STRING",
+          "description" : "Set output language to one of the simple text format"
+        },
+        { 
+          "name" : "-Tjson",
+          "type" : "STRING",
+          "description" : "Set output language to one of the JSON format"
+        },
+        { 
+          "name" : "-Tps2",
+          "type" : "STRING",
+          "description" : "Set output language to one of the PostScript for PDF format"
+        },
+        { 
+          "name" : "-Tbmp",
+          "type" : "STRING",
+          "description" : "Set output language to one of the Windows Bitmap Format format"
+        },
+        { 
+          "name" : "-Tbmp",
+          "type" : "STRING",
+          "description" : "Set output language to one of the Windows Bitmap Format format"
+        }
+        ]       
+    },
+    { 
+        "cmd" : "latex" ,
+        "opt" : [ 
+         {
+            "name" : "pdflatex",
+            "type" : "FACULTATIF",
+            "description" : "Result file will be in pdf"
+            
+          },
+          {
+            "name" : "lualatex",
+            "type" : "FACULTATIF",
+            "description" : "LuaTeX was chosen as the successor of pdfTeX. The overall structure and most orders are similar to those of LaTeX."
+            
+          },
+          {
+            "name" : "xelatex",
+            "type" : "FACULTATIF",
+            "description" : "XeLaTeX is a variant of LaTeX, the overall structure of the document remains the same and the vast majority of commands and packages continue to work as usual."
+            
+          }
+          
+                  ]      
+    }         
+ ]
+ 
+ 
+ 
